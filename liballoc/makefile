@@ -1,0 +1,1 @@
+OBJS += liballoc/liballoc.o
