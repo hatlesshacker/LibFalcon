@@ -2,6 +2,7 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
 #include <kernel.h>
 char* get_cpuvendor()
 {

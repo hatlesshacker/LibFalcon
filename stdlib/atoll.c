@@ -4,9 +4,9 @@ extern "C" {
 
 #include <stdlib.h>
 #include <ctype.h>
-    long atol(const char *s)
+    long long atoll(const char *s)
     {
-        long n=0;
+        long long n=0;
         int neg=0;
         while (isspace(*s)) s++;
         switch (*s)
@@ -16,7 +16,7 @@ extern "C" {
         case '+':
             s++;
         }
-        /* Compute n as a negative number to avoid overflow on LONG_MIN */
+        /* Compute n as a negative number to avoid overflow on LLONG_MIN */
         while (isdigit(*s))
             n = 10*n - (*s++ - '0');
         return neg ? n : -n;

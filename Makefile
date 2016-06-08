@@ -7,7 +7,7 @@
 CC = gcc
 AS = nasm
 ASF = -f elf
-CFLAGS = -nostdlib -nostdinc -Wall -I./include/ -std=gnu11
+CFLAGS = -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
 
@@ -30,7 +30,7 @@ all: $(OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 %.o: %.asm
-	@echo "  NASM       $@"
+	@echo "  NASM     $@"
 	@$(AS) $(ASF) $< -o $@
 
 clean:

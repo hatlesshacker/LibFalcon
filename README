@@ -1,4 +1,4 @@
-------------------------------
+﻿------------------------------
 Introduction to LibFalcon
 ------------------------------
 LibFalcon is a simple (and incomplete) C library to be linked with Hobby Operating Syestem Kernels. Almost all essential functions required by kernels are provided. (memcpy, strlen, atoi, etc.) However, there are No math functions at this moment. The reason is that I am in 9th standard, and I do not have enough knowledge about math functions. Libfalcon is distributed under the BSD license; see the accompanying LICENSE file for more information.
@@ -31,7 +31,7 @@ Now you need to provide some functions yourself in your kernel, as LibFalcon rel
   +                                         + It's up to you to decide. return 0 if the lock was acquired successfully. +
   +                                         + Anything else is failure.                                                 +
   +---------------------------------------------------------------------------------------------------------------------+
-  + int liballoc_lock()                     + This function unlocks what was previously locked by the liballoc_lock     +
+  + int liballoc_unlock()                     + This function unlocks what was previously locked by the liballoc_lock     +
   +                                         + function.  If it disabled interrupts, it enables interrupts. If it        +
   +                                         + had acquiried a spinlock, it releases the spinlock. etc. return 0 if the  +
   +                                         + lock was successfully released.                                           +
@@ -50,4 +50,4 @@ Now you need to provide some functions yourself in your kernel, as LibFalcon rel
 You can link the library with your kernel by running something like:
       gcc -o mykernel -ffreestanding -nostdlib kernelobject1.o kernelobject2.o kernelobject3.o .... libfalcon.a
 
-NOTE: In your kernel, you should use header files found in include/ directory foryour kernel code. 
+NOTE: In your kernel, you should use header files found in include/ directory for your kernel code. 
