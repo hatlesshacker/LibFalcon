@@ -10,6 +10,7 @@ ASF = -f elf
 CFLAGS = -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
+DESTDIR=
 
 .PHONY: $(OBJS)
 
@@ -32,6 +33,9 @@ all: $(OBJS)
 %.o: %.asm
 	@echo "  NASM     $@"
 	@$(AS) $(ASF) $< -o $@
+
+test:
+	@echo "Test suite not available!"
 
 clean:
 	rm -f $(OBJS) libfalcon.a
