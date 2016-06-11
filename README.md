@@ -23,43 +23,16 @@ Go to the LibFalcon Project root directory and run `make clean`, just to be sure
 
 Now you need to provide some functions yourself in your kernel, as LibFalcon relies on them. Without these 'hook functions', you may not be able to link the library with your kernel. (to disable LibAlloc support, simply omit the `WIRH_LIBALLOC=1` part while running `make all`.) The functions are:
 
-  +-------------------------------------------------------------------------+
-  + int liballoc_lock()           + This function is supposed to lock       +
-  +                               + the memory data structures.             +
-  +                               + It could be as simple as disabling      +
-  +                               + interrupts or acquiring a spinlock.     +
-  +                               + It's up to you to decide. return 0 if   +
-  +                               + the lock was acquired successfully.     +
-  +                               + Anything else is failure.               +
-  +-------------------------------------------------------------------------+
-  + int liballoc_unlock()         + This function unlocks what was          +
-  +                               + previously locked by the liballoc_lock  +
-  +                               + function.  If it disabled interrupts,   +
-  +                               + it enables interrupts. If it            +
-  +                               + had acquiried a spinlock, it releases   +
-  +                               + the spinlock. etc. return 0 if the      +
-  +                               + lock was successfully released.         +
-  +-------------------------------------------------------------------------+
-  + void* liballoc_alloc(int)     + This is the hook into the local system  +
-  +                               + which allocates pages. It accepts       + 
-  +                               + an integer parameter which is the       +
-  +                               + number of pages required.  The page     +
-  +                               + size was set up in the liballoc_init    +
-  +                               + function. return NULL if the pages      + 
-  +                               + were not allocated, or return a pointer +
-  +                               + to the allocated memory.                +
-  +-------------------------------------------------------------------------+
-  + int liballoc_free(void*,int)  + This frees previously allocated memory. +
-  +                               + The void* parameter passed to the       +
-  +                               + function is the exact same value        +
-  +                               + returned from a previous liballoc_alloc +
-  +                               + call. The integer value is the number   +
-  +                               + of pages to free. return 0 if the       +
-  +                               + memory was successfully freed.          +
-  +-------------------------------------------------------------------------+
+  + int liballoc_lock()
+  + int liballoc_unlock()
+  + void* liballoc_alloc(int)
+  + int liballoc_free(void*,int)
+
+See LibAlloc Documentation for information about these functions.
 
 ## Using LibFalcon
 
 You can link the library with your kernel by running something like:
       `gcc -o mykernel -ffreestanding -nostdlib kernelobject1.o kernelobject2.o kernelobject3.o .... libfalcon.a`
+
 NOTE: `gcc -o mykernel -ffreestanding -nostdlib kernelobject1.o kernelobject2.o kernelobject3.o .... -L./ -lfalcon` should also work, but is not tested.
