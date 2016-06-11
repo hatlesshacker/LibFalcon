@@ -1,0 +1,11 @@
+1)  Use inline assembly in as much code as possible.
+2)  Support for different architectures.
+3)  Use a small and compact base64 encoding and decoding library.
+4)  Re-write build system.
+5)  Support Math Functions.
+6)  Add a simple physical memory allocator.
+7)  Add a simple bitmap image processing Library.
+8)  Find a way to jump to 16-bit real mode to execute interrupts there, 
+    and safely return to protected mode.
+9)  Add VESA VBE routines.
+10) Add more stdlib functions.

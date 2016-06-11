@@ -11,6 +11,7 @@ CFLAGS = -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
 DESTDIR=
+WITH_LIBALLOC=0
 
 .PHONY: $(OBJS)
 
@@ -20,7 +21,10 @@ include misc/makefile
 include string/makefile
 include stdlib/makefile
 include kernel/makefile
-include liballoc/makefile
+
+ifeq ("$(WITH_LIBALLOC)" , "1")
+   include externals/liballoc/makefile
+endif
 
 all: $(OBJS)
 	@$(AR) rcs libfalcon.a $(OBJS)
@@ -38,4 +42,4 @@ test:
 	@echo "Test suite not available!"
 
 clean:
-	rm -f $(OBJS) libfalcon.a
+	rm -f $(OBJS) libfalcon.a externals/liballoc/*.o

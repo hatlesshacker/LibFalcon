@@ -1,6 +1,10 @@
 OBJS += ctype/isalnum.o
 OBJS += ctype/isalpha.o
+OBJS += ctype/isascii.o
+OBJS += ctype/isblank.o
+OBJS += ctype/iscntrl.o
 OBJS += ctype/isdigit.o
+OBJS += ctype/isgraph.o
 OBJS += ctype/islower.o
 OBJS += ctype/isprint.o
 OBJS += ctype/ispunct.o

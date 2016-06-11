@@ -9,6 +9,10 @@ extern "C" {
 
 int32_t isalnum(int32_t c);
 int32_t isalpha(int32_t c);
+int32_t isascii(int32_t c);
+int32_t isblank(int32_t c);
+int32_t iscntrl(int32_t c);
+int32_t isgraph(int32_t c);
 int32_t iscntrl(int32_t c);
 int32_t isdigit(int32_t c);
 int32_t isgraph(int32_t c);
