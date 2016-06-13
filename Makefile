@@ -17,7 +17,6 @@ WITH_LIBALLOC=0
 
 include ctype/makefile
 include maths/makefile
-include misc/makefile
 include string/makefile
 include stdlib/makefile
 include kernel/makefile
