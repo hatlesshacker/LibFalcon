@@ -22,7 +22,7 @@ extern "C" {
 /* Check if bit n in flags is set */
 #define check_flag(flags, n) ((flags) & bit(n))
 
-void reboot()
+inline void reboot()
 {
     uint8_t temp;
 

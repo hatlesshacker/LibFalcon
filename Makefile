@@ -7,7 +7,7 @@
 CC = gcc
 AS = nasm
 ASF = -f elf
-CFLAGS = -nostdlib -nostdinc -I./include/ -std=gnu99
+CFLAGS = -O0 -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
 DESTDIR=
