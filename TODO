@@ -9,3 +9,4 @@
     and safely return to protected mode.
 9)  Add VESA VBE routines.
 10) Add more stdlib functions.
+11) Implement a test suite.

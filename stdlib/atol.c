@@ -3,6 +3,7 @@ extern "C" {
 #endif
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <ctype.h>
     long atol(const char *s)
     {

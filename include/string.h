@@ -8,28 +8,28 @@ extern "C" {
 #include <stddef.h> /* for NULL and size_t */
 #include <stdint.h>
 
-void* memchr(const void* s, int32_t c, size_t n);
-int32_t memcmp(const void* s1, const void* s2, size_t n);
-void* memcpy(void* restrict s1, const void* restrict s2, size_t n);
-void* memmove(void* s1, const void* s2, size_t n);
-void* memset(void* s, int32_t c, size_t n);
-char* strcat(char* restrict s1, const char* restrict s2);
-char* strchr(const char* s, int32_t c);
-int32_t strcmp(const char* s1, const char* s2);
-int32_t strcoll(const char* s1, const char* s2);
-char* strcpy(char* restrict s1, const char* restrict s2);
-size_t strcspn(const char* s1, const char* s2);
+void* memchr(const void*, int32_t, size_t);
+int32_t memcmp(const void* , const void* , size_t);
+void* memcpy(void* restrict , const void* restrict , size_t);
+void* memmove(void*, const void* , size_t);
+void* memset(void*, int32_t c, size_t);
+char* strcat(char* restrict , const char* restrict);
+char* strchr(const char* , int32_t);
+int32_t strcmp(const char* , const char*);
+int32_t strcoll(const char* , const char*);
+char* strcpy(char* restrict , const char* restrict);
+size_t strcspn(const char* , const char*);
 char* strerror(int32_t errnum);
-size_t strlen(const char* s);
-char* strncat(char* restrict s1, const char* restrict s2, size_t n);
-int32_t strncmp(const char* s1, const char* s2, size_t n);
-char* strncpy(char* restrict s1, const char* restrict s2, size_t n);
-size_t strnlen(const char* s, size_t maxlen);
-char* strpbrk(const char* s1, const char* s2);
-char* strrchr(const char* s, int32_t c);
-size_t strspn(const char* s1, const char* s2);
-char* strstr(const char* s1, const char* s2);
-char* strtok(char* restrict s1, const char* restrict s2);
+size_t strlen(const char* );
+char* strncat(char* restrict , const char* restrict , size_t);
+int32_t strncmp(const char*,const char* ,size_t);
+char* strncpy(char* restrict,const char* restrict,size_t);
+size_t strnlen(const char*,size_t);
+char* strpbrk(const char*,const char*);
+char* strrchr(const char*,int32_t);
+size_t strspn(const char*,const char*);
+char* strstr(const char*,const char*);
+char* strtok(char* restrict,const char* restrict);
 
 #ifdef __cplusplus
 } /* extern "C" */

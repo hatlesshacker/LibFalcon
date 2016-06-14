@@ -11,7 +11,7 @@ CFLAGS = -O0 -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
 DESTDIR=
-WITH_LIBALLOC=0
+with-liballoc=no
 
 .PHONY: $(OBJS)
 
@@ -21,7 +21,7 @@ include string/makefile
 include stdlib/makefile
 include kernel/makefile
 
-ifeq ("$(WITH_LIBALLOC)" , "1")
+ifeq ("$(with-liballoc)" , "yes")
    include externals/liballoc/makefile
 endif
 
