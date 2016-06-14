@@ -30,6 +30,7 @@ char* strrchr(const char*,int32_t);
 size_t strspn(const char*,const char*);
 char* strstr(const char*,const char*);
 char* strtok(char* restrict,const char* restrict);
+int32_t strcoll(const char*, const char*);
 
 #ifdef __cplusplus
 } /* extern "C" */

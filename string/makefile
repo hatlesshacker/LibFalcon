@@ -17,3 +17,4 @@ OBJS += string/strrchr.o
 OBJS += string/strspn.o
 OBJS += string/strstr.o
 OBJS += string/strtok.o
+OBJS += string/strcoll.o
