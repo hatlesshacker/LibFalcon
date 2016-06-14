@@ -11,7 +11,7 @@ CFLAGS = -O0 -nostdlib -nostdinc -I./include/ -std=gnu99
 AR = ar
 OBJS=
 DESTDIR=
-with-liballoc=no
+with-liballoc=yes
 
 .PHONY: $(OBJS)
 

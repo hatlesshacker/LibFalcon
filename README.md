@@ -19,9 +19,9 @@ For Installation of Libfalcon You should have:
 2. NASM. (tested with NASM version 2.09.10)
 3. make.
 
-Go to the LibFalcon Project root directory and run `make clean`, just to be sure there are no stale object files. After that run `make all WITH_LIBALLOC=1`. If everything goes well and LibFalcon Compiles correctly, The build system will print "Build Successfull." A file named 'libfalcon.a' should be located on the Project root directory. The library is now almost ready to be linked with your kernel.
+Go to the LibFalcon Project root directory and run `make clean`, just to be sure there are no stale object files. After that run `make all`. If everything goes well and LibFalcon Compiles correctly, The build system will print "Build Successfull." A file named 'libfalcon.a' should be located on the Project root directory. The library is now almost ready to be linked with your kernel.
 
-Now you need to provide some functions yourself in your kernel, as LibFalcon relies on them. Without these 'hook functions', you may not be able to link the library with your kernel. (to disable LibAlloc support, simply omit the `WIRH_LIBALLOC=1` part while running `make all`.) The functions are:
+Now you need to provide some functions yourself in your kernel, as LibFalcon relies on them. Without these 'hook functions', you may not be able to link the library with your kernel. (to disable LibAlloc support, run `make all with-liballoc=no`.) The functions are:
 
   + int liballoc_lock()
   + int liballoc_unlock()
