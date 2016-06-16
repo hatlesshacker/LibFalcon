@@ -1,7 +1,0 @@
-LibFalcon is currently developed by Syed Nasim. (warhacker.2002@gmail.com)
-
-------------------------------------------------------------------------------------------------
-LibFalcon uses Liballoc for kernel heap functions. Written by Durand Miller. <clutter@djm.co.za>
-Some of the functions are taken from PDCLIB.
-Some of the functions are taken from libc11.
-Some of the functions are taken from musl.
