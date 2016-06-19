@@ -1,6 +1,6 @@
 # LibFalcon
 
-[LibFalcon](https://github.com/FlashySoft/LibFalcon/) is a simple (and incomplete) C library to be linked with Hobby Operating Syestem Kernels. Almost all essential functions required by kernels are provided. (memcpy, strlen, atoi, etc.) However, there are No math functions at this moment. The reason is that I am in 9th standard, and I do not have enough knowledge about math functions. Libfalcon is distributed under the BSD license; see the accompanying LICENSE file for more information.
+[LibFalcon](https://github.com/Zefyer/LibFalcon/) is a simple (and incomplete) C library to be linked with Hobby Operating Syestem Kernels. Almost all essential functions required by kernels are provided. (memcpy, strlen, atoi, etc.) However, there are No math functions at this moment. The reason is that I am in 9th standard, and I do not have enough knowledge about math functions. Libfalcon is distributed under the BSD license; see the accompanying LICENSE file for more information.
 
 ## Features of LibFalcon
 
