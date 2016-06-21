@@ -64,18 +64,20 @@ size_t strspn(const char*,const char*);
 char* strstr(const char*,const char*);
 char* strtok(char* restrict,const char* restrict);
 int32_t strcoll(const char*, const char*);
+void swab(const void *restrict, void *restrict, ssize_t);
+void bzero(void*, size_t);
+void bcopy(const void*, void*, size_t);
+int bcmp(const void*, const void*, size_t);
+char* index(const char*, int);
+char* rindex(const char*, int);
 
-//void bzero(void*, size_t);
-//void bcopy(const void*, void*, size_t);
-//int bcmp(const void*, const void*, size_t);
-//char* index(const char*, int);
-//char* rindex(const char*, int);
-
+/*
 #define bzero(s,n)     memset(s, 0, n)
 #define index(s,c)     strchr(s, c)
 #define rindex(s,c)    strrchr(s, c)
 #define bcopy(s1,s2,n) memmove(s2, s1, n)
 #define bcmp(s1,s2,n)  memcmp(s1, s2, n)
+*/
 
 #ifdef __cplusplus
 } /* extern "C" */
