@@ -24,3 +24,5 @@ OBJS += string/bzero.o
 OBJS += string/index.o
 OBJS += string/rindex.o
 OBJS += string/strnlen.o
+OBJS += string/vsprintf.o
+OBJS += string/printk.o

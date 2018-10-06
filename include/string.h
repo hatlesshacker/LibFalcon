@@ -38,6 +38,7 @@ extern "C" {
 #endif
 
 #include <stddef.h> /* for NULL and size_t */
+#include <stdarg.h>
 #include <stdint.h>
 
 void* memchr(const void*, int32_t, size_t);
@@ -69,6 +70,7 @@ void bcopy(const void*, void*, size_t);
 int bcmp(const void*, const void*, size_t);
 char* index(const char*, int);
 char* rindex(const char*, int);
+int vsprintf(char *buf, const char *fmt, va_list args);
 
 #ifdef __cplusplus
 } /* extern "C" */
