@@ -22,10 +22,6 @@ include string/makefile
 include stdlib/makefile
 include kernel/makefile
 
-ifeq ("$(with-liballoc)" , "yes")
-   include externals/liballoc/makefile
-endif
-
 all: $(OBJS)
 	@$(AR) rcs libfalcon.a $(OBJS)
 	@echo "Build Successfull."
@@ -42,4 +38,4 @@ test:
 	@echo "Test suite not available!"
 
 clean:
-	rm -f $(OBJS) libfalcon.a externals/liballoc/*.o
+	rm -f $(OBJS) libfalcon.a
