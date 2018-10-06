@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -42,4 +42,4 @@ typedef unsigned short int	uint16_t;
 typedef unsigned int		uint32_t;
 typedef unsigned long long int	uint64_t;
 
-#endif /* _STDINT_H */
+#endif

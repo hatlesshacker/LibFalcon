@@ -30,17 +30,46 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#include <stdlib.h>
+#include <kernel.h>
 #include <stdint.h>
-div_t div(int32_t numerator, int32_t denominator)
-{
-	return (div_t){ numerator/denominator, numerator%denominator };
+#include <textmode.h>
+
+unsigned short *video_memory = (unsigned short *)0xB8000;
+unsigned char cursor_x = 0;
+unsigned char cursor_y = 0;
+
+unsigned char get_cursor_y(){
+  return cursor_y;
+} unsigned char get_cursor_x(){
+  return cursor_x;
+} unsigned short *get_video_memory(){
+  return video_memory;
 }
 
-#if defined(__cplusplus)
+void move_cursor() {
+  unsigned short cursorLocation = cursor_y * 80 + cursor_x;
+  outportb(0x3D4, 14);
+  outportb(0x3D5, cursorLocation >> 8);
+  outportb(0x3D4, 15);
+  outportb(0x3D5, cursorLocation);
 }
-#endif
+
+void scroll() {
+
+  unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
+  unsigned short blank = 0x20 | (attributeByte << 8);
+
+  if (cursor_y >= 25) {
+
+    int i;
+    for (i = 0 * 80; i < 24 * 80; i++) {
+      video_memory[i] = video_memory[i + 80];
+    }
+
+    for (i = 24 * 80; i < 25 * 80; i++) {
+      video_memory[i] = blank;
+    }
+
+    cursor_y = 24;
+  }
+}

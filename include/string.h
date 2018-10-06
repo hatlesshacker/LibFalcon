@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-#include <stddef.h> /* for NULL and size_t */
+#include <stddef.h>
 #include <stdarg.h>
 #include <stdint.h>
 
@@ -73,7 +73,7 @@ char* rindex(const char*, int);
 int vsprintf(char *buf, const char *fmt, va_list args);
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
-#endif /* _STRING_H */
+#endif

@@ -5,8 +5,8 @@
 5)  Support Math Functions.
 6)  Add a simple physical memory allocator.
 7)  Add a simple bitmap image processing Library.
-8)  Find a way to jump to 16-bit real mode to execute interrupts there, 
-    and safely return to protected mode.
+8)  Find a way to jump to 16-bit real mode to execute interrupts there,
+    and safely return to protected mode. [Done: 6.10.18]
 9)  Add VESA VBE routines.
 10) Add more stdlib functions.
 11) Implement a test suite.

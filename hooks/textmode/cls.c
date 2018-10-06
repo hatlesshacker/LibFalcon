@@ -30,17 +30,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#include <stdlib.h>
+#include <kernel.h>
 #include <stdint.h>
-div_t div(int32_t numerator, int32_t denominator)
-{
-	return (div_t){ numerator/denominator, numerator%denominator };
-}
+#include <textmode.h>
 
-#if defined(__cplusplus)
+void cls() {
+  unsigned char cursor_x = get_cursor_x();
+  unsigned char cursor_y = get_cursor_y();
+  unsigned short *video_memory = get_video_memory();
+  unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
+  unsigned short blank = 0x20 | (attributeByte << 8);
+
+  int i;
+  for (i = 0; i < 80 * 25; i++) {
+    video_memory[i] = blank;
+  }
+
+  cursor_x = 0;
+  cursor_y = 0;
+  move_cursor();
 }
-#endif

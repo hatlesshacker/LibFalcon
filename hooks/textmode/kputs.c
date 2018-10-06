@@ -30,17 +30,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#include <stdlib.h>
+#include <kernel.h>
 #include <stdint.h>
-div_t div(int32_t numerator, int32_t denominator)
-{
-	return (div_t){ numerator/denominator, numerator%denominator };
-}
+#include <textmode.h>
 
-#if defined(__cplusplus)
+void kputs(unsigned char *c) {
+  int i = 0;
+  while (c[i]) {
+    kputch(c[i++]);
+  }
 }
-#endif

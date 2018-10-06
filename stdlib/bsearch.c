@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -55,5 +55,5 @@ void *bsearch(const void *key, const void *base, size_t nel, size_t width, int (
 }
 
 #if defined(__cplusplus)
-} /* extern "C" */
+}
 #endif

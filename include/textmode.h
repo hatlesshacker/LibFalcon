@@ -30,17 +30,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#include <stdlib.h>
 #include <stdint.h>
-div_t div(int32_t numerator, int32_t denominator)
-{
-	return (div_t){ numerator/denominator, numerator%denominator };
-}
-
-#if defined(__cplusplus)
-}
-#endif
+void cls();
+void kputs(unsigned char *c);
+void kputs_dec(uint32_t n);
+void kputs_hex(uint32_t n);
+void kputch(unsigned char c);
+unsigned char get_cursor_y();
+unsigned char get_cursor_x();
+unsigned short *get_video_memory();
+void move_cursor();
+void scroll();

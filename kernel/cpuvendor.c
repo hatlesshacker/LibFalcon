@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -40,10 +40,10 @@ inline char* get_cpuvendor()
 {
     switch(__get_cpuvendor())
     {
-    case 0x756e6547: /* Intel */
+    case 0x756e6547:
         return "INTEL";
         break;
-    case 0x68747541: /* AMD */
+    case 0x68747541:
         return "AMD";
         break;
     default:
@@ -53,5 +53,5 @@ inline char* get_cpuvendor()
 }
 
 #if defined(__cplusplus)
-} /* extern "C" */
+}
 #endif

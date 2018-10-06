@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -49,12 +49,12 @@ extern "C" {
         case '+':
             s++;
         }
-        /* Compute n as a negative number to avoid overflow on LONG_MIN */
+
         while (isdigit(*s))
             n = 10*n - (*s++ - '0');
         return neg ? n : -n;
     }
 
 #if defined(__cplusplus)
-} /* extern "C" */
+}
 #endif

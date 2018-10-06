@@ -30,17 +30,37 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#include <stdlib.h>
+#include <kernel.h>
 #include <stdint.h>
-div_t div(int32_t numerator, int32_t denominator)
-{
-	return (div_t){ numerator/denominator, numerator%denominator };
-}
+#include <textmode.h>
 
-#if defined(__cplusplus)
+void kputs_hex(uint32_t n) {
+  unsigned short tmp;
+
+  kputs("0x");
+
+  char noZeroes = 1;
+
+  int i;
+  for (i = 28; i > 0; i -= 4) {
+    tmp = (n >> i) & 0xF;
+    if (tmp == 0 && noZeroes != 0) {
+      continue;
+    }
+
+    if (tmp >= 0xA) {
+      noZeroes = 0;
+      kputch(tmp - 0xA + 'a');
+    } else {
+      noZeroes = 0;
+      kputch(tmp + '0');
+    }
+  }
+
+  tmp = n & 0xF;
+  if (tmp >= 0xA) {
+    kputch(tmp - 0xA + 'a');
+  } else {
+    kputch(tmp + '0');
+  }
 }
-#endif

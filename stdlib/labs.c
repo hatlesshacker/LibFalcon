@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -40,5 +40,5 @@ long labs(long a)
 }
 
 #if defined(__cplusplus)
-} /* extern "C" */
+}
 #endif

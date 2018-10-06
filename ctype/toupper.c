@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2016, Syed Nasim
+ * Copyright (c) 2018, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -37,9 +37,9 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t toupper(const int32_t c) {
-  return islower(c) ? 'A' + (c - 'a') : c; /* in the "C" locale */
+  return islower(c) ? 'A' + (c - 'a') : c;
 }
 
 #if defined(__cplusplus)
-} /* extern "C" */
+}
 #endif
