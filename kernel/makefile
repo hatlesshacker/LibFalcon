@@ -8,3 +8,5 @@ OBJS += kernel/outportl.o
 OBJS += kernel/cr.o
 OBJS += kernel/cpuid.o
 OBJS += kernel/cpuvendor.o
+OBJS += kernel/int32-a.o
+OBJS += kernel/int32-b.o
