@@ -4,7 +4,7 @@
 # **
 # ***************************************
 
-CC = gcc
+CC = gcc-6
 AS = nasm
 ASF = -f elf
 CFLAGS = -O0 -nostdlib -nostdinc -I./include/ -std=gnu99 -Wall -Wextra \
