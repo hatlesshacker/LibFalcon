@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2018, Syed Nasim
+ * Copyright (c) 2016, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -30,17 +30,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#ifndef _STDINT_H
-#define _STDINT_H
+#if defined(__cplusplus)
+extern "C" {
+#endif
 
-typedef signed char		int8_t;
-typedef short int		int16_t;
-typedef int			int32_t;
-typedef long long int		int64_t;
-typedef unsigned char		uint8_t;
-typedef unsigned short int	uint16_t;
-typedef unsigned int		uint32_t;
-typedef unsigned long long int	uint64_t;
-typedef int ssize_t;
+#include <string.h>
+void swab(const void *restrict _src, void *restrict _dest, ssize_t n)
+{
+	const char *src = _src;
+	char *dest = _dest;
+	for (; n>1; n-=2) {
+		dest[0] = src[1];
+		dest[1] = src[0];
+		dest += 2;
+		src += 2;
+	}
+}
 
+#if defined(__cplusplus)
+} /* extern "C" */
 #endif

@@ -26,3 +26,4 @@ OBJS += string/rindex.o
 OBJS += string/strnlen.o
 OBJS += string/vsprintf.o
 OBJS += string/printk.o
+OBJS += string/swab.o
