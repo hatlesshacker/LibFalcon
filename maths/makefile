@@ -3,3 +3,4 @@ OBJS += maths/sub.o
 OBJS += maths/mul.o
 OBJS += maths/div.o
 OBJS += maths/mod.o
+OBJS += maths/pow.o
