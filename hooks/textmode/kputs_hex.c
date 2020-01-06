@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <kernel.h>
 #include <stdint.h>
-#include <textmode.h>
+#include <libfalcon/textmode.h>
 
 void LF_kputs_hex(uint32_t n) {
   unsigned short tmp;

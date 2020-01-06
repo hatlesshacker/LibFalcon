@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <stdarg.h>
 #include <string.h>
-#include <hooks.h>
+#include <libfalcon/textmode.h>
 
 static unsigned char buf[1024];
 
@@ -44,7 +44,7 @@ int printk(const char *fmt, ...) {
   i = vsprintf(buf, fmt, args);
   va_end(args);
 
-  kputs(buf);
+  LF_kputs(buf);
 
   return i;
 }

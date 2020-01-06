@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <kernel.h>
 #include <stdint.h>
-#include <textmode.h>
+#include <libfalcon/textmode.h>
 
 unsigned short *video_memory = (unsigned short *)0xB8000;
 unsigned char cursor_x = 0;
