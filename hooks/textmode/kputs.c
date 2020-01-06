@@ -34,9 +34,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <textmode.h>
 
-void kputs(unsigned char *c) {
+void LF_kputs(unsigned char *c) {
   int i = 0;
   while (c[i]) {
-    kputch(c[i++]);
+    LF_kputch(c[i++]);
   }
 }

@@ -40,9 +40,12 @@ OBJS=
 
 .PHONY: $(OBJS)
 
-# IMPLEMENTED HOOKS: Remove them if you have your own code.
+# These files are part of any Kernel's core.
+# Remove the following lines if you want to use your own code.
 include hooks/textmode/makefile
 
+# These files contain the general functions that you
+# would expect from a C Library. 
 include ctype/makefile
 include maths/makefile
 include string/makefile
@@ -50,19 +53,21 @@ include stdlib/makefile
 include kernel/makefile
 
 all: $(OBJS)
-	@$(AR) rcs libfalcon.a $(OBJS)
+	@mkdir OUT
+	@cp -rf include OUT/include
+	$(AR) rcs OUT/libfalcon.a $(OBJS)
 	@echo "Build Successfull."
 
 %.o: %.c
 	@echo "  CC       $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 %.o: %.asm
 	@echo "  NASM     $@"
-	@$(AS) $(ASF) $< -o $@
+	$(AS) $(ASF) $< -o $@
 
 test:
 	@echo "Test suite not available!"
 
 clean:
-	rm -f $(OBJS) libfalcon.a
+	rm -rf $(OBJS) OUT/

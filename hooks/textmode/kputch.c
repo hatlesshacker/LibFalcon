@@ -34,10 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <textmode.h>
 
-void kputch(unsigned char c) {
+void LF_kputch(unsigned char c) {
   unsigned char cursor_x = get_cursor_x();
   unsigned char cursor_y = get_cursor_y();
-  unsigned short *video_memory = get_video_memory();
+  unsigned short *video_memory = LF_get_video_memory();
 
   unsigned char backColour = 0;
   unsigned char foreColour = 15;
@@ -70,6 +70,6 @@ void kputch(unsigned char c) {
     cursor_y++;
   }
 
-  scroll();
-  move_cursor();
+  LF_scroll();
+  LF_move_cursor();
 }

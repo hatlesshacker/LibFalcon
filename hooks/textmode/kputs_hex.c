@@ -34,10 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <textmode.h>
 
-void kputs_hex(uint32_t n) {
+void LF_kputs_hex(uint32_t n) {
   unsigned short tmp;
 
-  kputs("0x");
+  LF_kputs("0x");
 
   char noZeroes = 1;
 
@@ -50,17 +50,17 @@ void kputs_hex(uint32_t n) {
 
     if (tmp >= 0xA) {
       noZeroes = 0;
-      kputch(tmp - 0xA + 'a');
+      LF_kputch(tmp - 0xA + 'a');
     } else {
       noZeroes = 0;
-      kputch(tmp + '0');
+      LF_kputch(tmp + '0');
     }
   }
 
   tmp = n & 0xF;
   if (tmp >= 0xA) {
-    kputch(tmp - 0xA + 'a');
+    LF_kputch(tmp - 0xA + 'a');
   } else {
-    kputch(tmp + '0');
+    LF_kputch(tmp + '0');
   }
 }

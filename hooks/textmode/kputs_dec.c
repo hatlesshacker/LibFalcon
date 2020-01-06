@@ -34,10 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <textmode.h>
 
-void kputs_dec(uint32_t n) {
+void LF_kputs_dec(uint32_t n) {
 
   if (n == 0) {
-    kputch('0');
+    LF_kputch('0');
     return;
   }
 
@@ -57,5 +57,5 @@ void kputs_dec(uint32_t n) {
   while (i >= 0) {
     c2[i--] = c[j++];
   }
-  kputs(c2);
+  LF_kputs(c2);
 }

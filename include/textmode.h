@@ -31,13 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include <stdint.h>
-void cls();
-void kputs(unsigned char *c);
-void kputs_dec(uint32_t n);
-void kputs_hex(uint32_t n);
-void kputch(unsigned char c);
-unsigned char get_cursor_y();
-unsigned char get_cursor_x();
-unsigned short *get_video_memory();
-void move_cursor();
-void scroll();
+void LF_cls();
+void LF_kputs(unsigned char *c);
+void LF_kputs_dec(uint32_t n);
+void LF_kputs_hex(uint32_t n);
+void LF_kputch(unsigned char c);
+unsigned char LF_get_cursor_y();
+unsigned char LF_get_cursor_x();
+unsigned short *LF_get_video_memory();
+void LF_move_cursor();
+void LF_scroll();

@@ -34,10 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <textmode.h>
 
-void cls() {
+void LF_cls() {
   unsigned char cursor_x = get_cursor_x();
   unsigned char cursor_y = get_cursor_y();
-  unsigned short *video_memory = get_video_memory();
+  unsigned short *video_memory = LF_get_video_memory();
   unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
   unsigned short blank = 0x20 | (attributeByte << 8);
 
@@ -48,5 +48,5 @@ void cls() {
 
   cursor_x = 0;
   cursor_y = 0;
-  move_cursor();
+  LF_move_cursor();
 }

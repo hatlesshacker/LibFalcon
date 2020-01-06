@@ -38,15 +38,15 @@ unsigned short *video_memory = (unsigned short *)0xB8000;
 unsigned char cursor_x = 0;
 unsigned char cursor_y = 0;
 
-unsigned char get_cursor_y(){
+unsigned char LF_get_cursor_y(){
   return cursor_y;
-} unsigned char get_cursor_x(){
+} unsigned char LF_get_cursor_x(){
   return cursor_x;
-} unsigned short *get_video_memory(){
+} unsigned short *LF_get_video_memory(){
   return video_memory;
 }
 
-void move_cursor() {
+void LF_move_cursor() {
   unsigned short cursorLocation = cursor_y * 80 + cursor_x;
   outportb(0x3D4, 14);
   outportb(0x3D5, cursorLocation >> 8);
@@ -54,7 +54,7 @@ void move_cursor() {
   outportb(0x3D5, cursorLocation);
 }
 
-void scroll() {
+void LF_scroll() {
 
   unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
   unsigned short blank = 0x20 | (attributeByte << 8);
