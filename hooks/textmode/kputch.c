@@ -35,8 +35,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <libfalcon/textmode.h>
 
 void LF_kputch(unsigned char c) {
-  unsigned char cursor_x = get_cursor_x();
-  unsigned char cursor_y = get_cursor_y();
+  unsigned char cursor_x = LF_get_cursor_x();
+  unsigned char cursor_y = LF_get_cursor_y();
   unsigned short *video_memory = LF_get_video_memory();
 
   unsigned char backColour = 0;
