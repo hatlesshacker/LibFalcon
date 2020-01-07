@@ -1,0 +1,15 @@
+# How to Use LibFalcon
+
+The LibFalcon library is a culmination of various useful C functions that are needed by
+low-level programs and Hobbyist kernels. These are the few simple steps you need
+to follow in order to use the library.
+
+1. Review the Makefile on the LibFalcon source code's root folder. Add/remove addons
+provided by Libfalcon (Like the textmode routines) and run `make`.
+
+2. After the compilation has finished, you should see a directory named 'OUT' in the project
+root. This directory contains an 'include' subdirectrory and the libfalcon.a file.
+
+3. Copy the includes/ directory to your kernel's source code directory; this will serve as the
+include directory housing all the C/C++ heders you'll need. While Linkng your Kernel's 
+source code, link the libfalcon.a library file along with all the object files of your kernel.

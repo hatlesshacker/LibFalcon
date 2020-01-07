@@ -1,0 +1,10 @@
+# Notes regarding Text Mode addon:
+
+As of now, the Textmode printing routines are provided with libfalcon. Simple functions like 
+puts(), cls() are provided. All the functions are prefixed with `LF_` so that the given
+routines don't clash with the user's own routines. If you don't want to use the screen routines 
+implemented here to be bundled with the final libfalcon.a library, you can just comment out the 
+line "include hooks/textmode/makefile". LibFalcon works perfectly well without it.
+
+However, you might want to remove the libfalcon/textmode.h header from your final includes/ 
+directory.

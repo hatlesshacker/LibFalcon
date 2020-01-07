@@ -40,9 +40,11 @@ OBJS=
 
 .PHONY: $(OBJS)
 
-# These files are part of any Kernel's core.
-# Remove the following lines if you want to use your own code.
-include hooks/textmode/makefile
+# These files are LibFalcon addons.
+# The addons are disabled by default, uncomment these lines if you
+# Want to use them.
+
+#include hooks/textmode/makefile
 
 # These files contain the general functions that you
 # would expect from a C Library. 
