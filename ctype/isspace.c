@@ -37,17 +37,17 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t isspace(const int32_t c) {
-  switch (c) {
+    switch (c) {
     case ' ':
     case '\f':
     case '\n':
     case '\r':
     case '\t':
     case '\v':
-      return 1;
+        return 1;
     default:
-      return 0;
-  }
+        return 0;
+    }
 }
 
 #if defined(__cplusplus)

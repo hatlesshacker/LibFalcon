@@ -36,28 +36,21 @@ extern "C" {
 
 #include <string.h>
 #include <stddef.h>
-char * strtok( char * restrict s1, const char * restrict s2 )
-{
+char * strtok( char * restrict s1, const char * restrict s2 ) {
     static char * tmp = NULL;
     const char * p = s2;
 
-    if ( s1 != NULL )
-    {
+    if ( s1 != NULL ) {
         tmp = s1;
-    }
-    else
-    {
-        if ( tmp == NULL )
-        {
+    } else {
+        if ( tmp == NULL ) {
             return NULL;
         }
         s1 = tmp;
     }
 
-    while ( *p && *s1 )
-    {
-        if ( *s1 == *p )
-        {
+    while ( *p && *s1 ) {
+        if ( *s1 == *p ) {
             ++s1;
             p = s2;
             continue;
@@ -65,19 +58,15 @@ char * strtok( char * restrict s1, const char * restrict s2 )
         ++p;
     }
 
-    if ( ! *s1 )
-    {
+    if ( ! *s1 ) {
         return ( tmp = NULL );
     }
 
     tmp = s1;
-    while ( *tmp )
-    {
+    while ( *tmp ) {
         p = s2;
-        while ( *p )
-        {
-            if ( *tmp == *p++ )
-            {
+        while ( *p ) {
+            if ( *tmp == *p++ ) {
                 *tmp++ = '\0';
                 return s1;
             }

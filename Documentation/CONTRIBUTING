@@ -1,2 +1,5 @@
-LibFalcon is hosted on GitHub. (https://github.com/hatlesshacker/LibFalcon/) Fork the library, make desired changes, and send me a pull request.
+LibFalcon is hosted on GitHub. (https://github.com/hatlesshacker/LibFalcon/)
+Fork the library, make desired changes, and send me a pull request.
 See the TODO file to see what should be added.
+
+run `sh ./format.sh` to format all of the code after making desired changes.

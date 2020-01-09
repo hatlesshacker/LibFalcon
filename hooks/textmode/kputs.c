@@ -35,8 +35,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <libfalcon/textmode.h>
 
 void LF_kputs(unsigned char *c) {
-  int i = 0;
-  while (c[i]) {
-    LF_kputch(c[i++]);
-  }
+    int i = 0;
+    while (c[i]) {
+        LF_kputch(c[i++]);
+    }
 }

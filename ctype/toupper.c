@@ -37,7 +37,7 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t toupper(const int32_t c) {
-  return islower(c) ? 'A' + (c - 'a') : c;
+    return islower(c) ? 'A' + (c - 'a') : c;
 }
 
 #if defined(__cplusplus)

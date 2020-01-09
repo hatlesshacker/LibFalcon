@@ -35,14 +35,11 @@ extern "C" {
 #endif
 
 #include <string.h>
-char * strrchr( const char * s, int32_t c )
-{
+char * strrchr( const char * s, int32_t c ) {
     size_t i = 0;
     while ( s[i++] );
-    do
-    {
-        if ( s[--i] == (char) c )
-        {
+    do {
+        if ( s[--i] == (char) c ) {
             return (char *) s + i;
         }
     } while ( i );

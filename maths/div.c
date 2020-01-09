@@ -30,7 +30,7 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t div(const int32_t a, const int32_t b) {
-  return a / b;
+    return a / b;
 }
 
 #if defined(__cplusplus)

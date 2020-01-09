@@ -34,9 +34,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-long labs(long a)
-{
-	return a>0 ? a : -a;
+long labs(long a) {
+    return a>0 ? a : -a;
 }
 
 #if defined(__cplusplus)

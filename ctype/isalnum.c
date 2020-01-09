@@ -37,7 +37,7 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t isalnum(const int32_t c) {
-  return isalpha(c) || isdigit(c);
+    return isalpha(c) || isdigit(c);
 }
 
 #if defined(__cplusplus)

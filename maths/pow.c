@@ -30,19 +30,18 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t pow(const int32_t a, const int32_t b) {
-	int32_t result = 1;
-	int32_t base = a;
-	int32_t exp = b;
-	for (;;)
-	{
-		if (exp & 1)
-			result *= base;
-		exp >>= 1;
-		if(!exp)
-			break;
-		base *= base;
-	}
-	return result;
+    int32_t result = 1;
+    int32_t base = a;
+    int32_t exp = b;
+    for (;;) {
+        if (exp & 1)
+            result *= base;
+        exp >>= 1;
+        if(!exp)
+            break;
+        base *= base;
+    }
+    return result;
 }
 
 #if defined(__cplusplus)

@@ -34,10 +34,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-    int abs(int a)
-    {
-        return a>0 ? a : -a;
-    }
+int abs(int a) {
+    return a>0 ? a : -a;
+}
 
 #if defined(__cplusplus)
 }

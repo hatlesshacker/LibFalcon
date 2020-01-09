@@ -35,32 +35,32 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <libfalcon/textmode.h>
 
 void LF_kputs_hex(uint32_t n) {
-  unsigned short tmp;
+    unsigned short tmp;
 
-  LF_kputs("0x");
+    LF_kputs("0x");
 
-  char noZeroes = 1;
+    char noZeroes = 1;
 
-  int i;
-  for (i = 28; i > 0; i -= 4) {
-    tmp = (n >> i) & 0xF;
-    if (tmp == 0 && noZeroes != 0) {
-      continue;
+    int i;
+    for (i = 28; i > 0; i -= 4) {
+        tmp = (n >> i) & 0xF;
+        if (tmp == 0 && noZeroes != 0) {
+            continue;
+        }
+
+        if (tmp >= 0xA) {
+            noZeroes = 0;
+            LF_kputch(tmp - 0xA + 'a');
+        } else {
+            noZeroes = 0;
+            LF_kputch(tmp + '0');
+        }
     }
 
+    tmp = n & 0xF;
     if (tmp >= 0xA) {
-      noZeroes = 0;
-      LF_kputch(tmp - 0xA + 'a');
+        LF_kputch(tmp - 0xA + 'a');
     } else {
-      noZeroes = 0;
-      LF_kputch(tmp + '0');
+        LF_kputch(tmp + '0');
     }
-  }
-
-  tmp = n & 0xF;
-  if (tmp >= 0xA) {
-    LF_kputch(tmp - 0xA + 'a');
-  } else {
-    LF_kputch(tmp + '0');
-  }
 }

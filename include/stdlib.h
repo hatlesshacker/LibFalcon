@@ -36,9 +36,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 #include <stddef.h>
 
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
+typedef struct {
+    int quot, rem;
+} div_t;
+typedef struct {
+    long quot, rem;
+} ldiv_t;
+typedef struct {
+    long long quot, rem;
+} lldiv_t;
 
 long atol(const char*);
 int atoi(const char*);

@@ -36,10 +36,8 @@ extern "C" {
 
 #include <stdint.h>
 #include <kernel.h>
-inline char* get_cpuvendor()
-{
-    switch(__get_cpuvendor())
-    {
+inline char* get_cpuvendor() {
+    switch(__get_cpuvendor()) {
     case 0x756e6547:
         return "INTEL";
         break;

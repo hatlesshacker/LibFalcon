@@ -35,18 +35,18 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <libfalcon/textmode.h>
 
 void LF_cls() {
-  unsigned char cursor_x = LF_get_cursor_x();
-  unsigned char cursor_y = LF_get_cursor_y();
-  unsigned short *video_memory = LF_get_video_memory();
-  unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
-  unsigned short blank = 0x20 | (attributeByte << 8);
+    unsigned char cursor_x = LF_get_cursor_x();
+    unsigned char cursor_y = LF_get_cursor_y();
+    unsigned short *video_memory = LF_get_video_memory();
+    unsigned char attributeByte = (0 << 4) | (15 & 0x0F);
+    unsigned short blank = 0x20 | (attributeByte << 8);
 
-  int i;
-  for (i = 0; i < 80 * 25; i++) {
-    video_memory[i] = blank;
-  }
+    int i;
+    for (i = 0; i < 80 * 25; i++) {
+        video_memory[i] = blank;
+    }
 
-  cursor_x = 0;
-  cursor_y = 0;
-  LF_move_cursor();
+    cursor_x = 0;
+    cursor_y = 0;
+    LF_move_cursor();
 }

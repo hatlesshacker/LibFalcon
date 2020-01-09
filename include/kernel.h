@@ -43,16 +43,17 @@ char* get_cpuvendor();
 int __get_cpuvendor();
 
 struct regs {
-  unsigned int gs, fs, es, ds;
-  unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;
-  unsigned int int_no, err_code;
-  unsigned int eip, cs, eflags, useresp, ss;
+    unsigned int gs, fs, es, ds;
+    unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;
+    unsigned int int_no, err_code;
+    unsigned int eip, cs, eflags, useresp, ss;
 };
 
 typedef struct __attribute__((packed)) {
-  unsigned short di, si, bp, sp, bx, dx, cx, ax;
-  unsigned short gs, fs, es, ds, eflags;
-} regs16_t;
+    unsigned short di, si, bp, sp, bx, dx, cx, ax;
+    unsigned short gs, fs, es, ds, eflags;
+}
+regs16_t;
 
 void int32(unsigned char intnum, regs16_t *regs);
 void int32_call(char interrupt, regs16_t r);

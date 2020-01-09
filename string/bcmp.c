@@ -34,8 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-inline unsigned char inportb (unsigned short port)
-{
+inline unsigned char inportb (unsigned short port) {
     unsigned char rv;
     asm volatile ("inb %1, %0" : "=a" (rv) : "dN" (port));
     return rv;
@@ -51,9 +50,8 @@ extern "C" {
 #endif
 
 #include <string.h>
-int bcmp(const void *s1, const void *s2, size_t n)
-{
-	return memcmp(s1, s2, n);
+int bcmp(const void *s1, const void *s2, size_t n) {
+    return memcmp(s1, s2, n);
 }
 
 #if defined(__cplusplus)

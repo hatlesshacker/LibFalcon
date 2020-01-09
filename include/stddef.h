@@ -35,7 +35,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typedef signed long ptrdiff_t;
 typedef unsigned long size_t;
-typedef struct { long long __ll; long double __ld; } max_align_t;
+typedef struct {
+    long long __ll;
+    long double __ld;
+} max_align_t;
 typedef int wchar_t;
 
 #define NULL ((void*)0)

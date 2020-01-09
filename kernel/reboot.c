@@ -52,22 +52,20 @@ extern "C" {
 
 #define check_flag(flags, n) ((flags) & bit(n))
 
-inline void reboot()
-{
+inline void reboot() {
     uint8_t temp;
 
     asm volatile ("cli");
 
 
-    do
-    {
+    do {
         temp = inportb(KBRD_INTRFC);
         if (check_flag(temp, KBRD_BIT_KDATA) != 0)
             inportb(KBRD_IO);
     } while (check_flag(temp, KBRD_BIT_UDATA) != 0);
 
     outportb(KBRD_INTRFC, KBRD_RESET);
-    loop:
+loop:
     asm volatile ("hlt");
     goto loop;
 }

@@ -36,26 +36,26 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 void LF_kputs_dec(uint32_t n) {
 
-  if (n == 0) {
-    LF_kputch('0');
-    return;
-  }
+    if (n == 0) {
+        LF_kputch('0');
+        return;
+    }
 
-  unsigned short acc = n;
-  char c[32];
-  int i = 0;
-  while (acc > 0) {
-    c[i] = '0' + acc % 10;
-    acc /= 10;
-    i++;
-  }
-  c[i] = 0;
+    unsigned short acc = n;
+    char c[32];
+    int i = 0;
+    while (acc > 0) {
+        c[i] = '0' + acc % 10;
+        acc /= 10;
+        i++;
+    }
+    c[i] = 0;
 
-  char c2[32];
-  c2[i--] = 0;
-  int j = 0;
-  while (i >= 0) {
-    c2[i--] = c[j++];
-  }
-  LF_kputs(c2);
+    char c2[32];
+    c2[i--] = 0;
+    int j = 0;
+    while (i >= 0) {
+        c2[i--] = c[j++];
+    }
+    LF_kputs(c2);
 }

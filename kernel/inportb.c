@@ -34,8 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-inline unsigned char inportb (unsigned short port)
-{
+inline unsigned char inportb (unsigned short port) {
     unsigned char rv;
     asm volatile ("inb %1, %0" : "=a" (rv) : "dN" (port));
     return rv;

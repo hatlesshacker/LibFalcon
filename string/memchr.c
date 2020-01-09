@@ -37,13 +37,10 @@ extern "C" {
 #include <string.h>
 #include <stdint.h>
 
-void * memchr( const void * s, int c, size_t n )
-{
+void * memchr( const void * s, int c, size_t n ) {
     const uint8_t * p = (const uint8_t *) s;
-    while ( n-- )
-    {
-        if ( *p == (uint8_t) c )
-        {
+    while ( n-- ) {
+        if ( *p == (uint8_t) c ) {
             return (void *) p;
         }
         ++p;

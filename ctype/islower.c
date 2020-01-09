@@ -37,7 +37,7 @@ extern "C" {
 #include <ctype.h>
 #include <stdint.h>
 int32_t islower(const int32_t c) {
-  return c >= 'a' && c <= 'z';
+    return c >= 'a' && c <= 'z';
 }
 
 #if defined(__cplusplus)

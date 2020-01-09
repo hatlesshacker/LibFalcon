@@ -34,9 +34,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-int isgraph(int c)
-{
-	return (unsigned)c-0x21 < 0x5e;
+int isgraph(int c) {
+    return (unsigned)c-0x21 < 0x5e;
 }
 
 #if defined(__cplusplus)
