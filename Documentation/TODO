@@ -1,11 +1,1 @@
-1)  Use inline assembly in as much code as possible.
-2)  Support for different architectures.
-3)  Use a small and compact base64 encoding and decoding library.
-4)  Re-write build system.
-5)  Support Math Functions.
-6)  Add a simple physical memory allocator.
-7)  Add a simple bitmap image processing Library.
-8)  Add VESA VBE routines.
-9) Add more stdlib functions.
-10) Implement a test suite.
-11) HAVE PROPER DOCUMENTATION.
+See https://github.com/hatlesshacker/LibFalcon/issues
