@@ -1,6 +1,6 @@
 # required: astyle
 
-astyle --style=java hooks/textmode/*.c
+astyle --style=java addons/textmode/*.c
 astyle --style=java ctype/*.c
 astyle --style=java include/*.h
 astyle --style=java kernel/*.c

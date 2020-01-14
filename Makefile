@@ -44,7 +44,7 @@ OBJS=
 # The addons are disabled by default, uncomment these lines if you
 # Want to use them.
 
-#include hooks/textmode/makefile
+#include addons/textmode/makefile
 
 # These files contain the general functions that you
 # would expect from a C Library. 

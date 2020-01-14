@@ -30,9 +30,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/*
+ * NOTE: This printk() routine uses screenwriting functions.
+ *       Implement a LF_impl_kputs() function in your kernel
+ *       or use the textmode addon provided by LibFalcon itself.
+ */
+
 #include <stdarg.h>
 #include <string.h>
-#include <libfalcon/textmode.h>
 
 static unsigned char buf[1024];
 
@@ -44,7 +49,7 @@ int printk(const char *fmt, ...) {
     i = vsprintf(buf, fmt, args);
     va_end(args);
 
-    LF_kputs(buf);
+    LF_impl_kputs(buf);
 
     return i;
 }

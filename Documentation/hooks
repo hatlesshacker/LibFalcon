@@ -1,0 +1,17 @@
+There are some functions in standard libraries which make use of 
+functions that are provided by the kernel itself (like malloc, print routines).
+Such functions are present in LibFalcon as well. You WILL need to implement
+those functions in your kernel source code.
+  Name of all the functions are of the pattern: "LF_impl_XXX()", where XXX varies
+  from function to function. If you don't have enough functionality in your 
+  kernel to implement that particular function properly, just implement a stub
+  version of the function.
+
+Here is the list of functions you need to implement in order to use LibFalcon.
+
+----------------------------------------------------------------------------------
+       Name          |            desc                        |      Used by
+----------------------------------------------------------------------------------
+void LF_impl_kputs   |   normal puts() alternative            |  string/printk.c
+ (unsigned char *c)  |                                        |
+----------------------------------------------------------------------------------
