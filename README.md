@@ -27,3 +27,7 @@ Go to the LibFalcon Project root directory and run `make clean`, just to be sure
 ## Using LibFalcon
 
 See Documentation/how-to-use for mode information.
+
+## The People
+
+See CREDITS
