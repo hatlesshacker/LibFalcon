@@ -1,1 +1,6 @@
-language: c
+dist: xenial
+language: python
+build:
+- make all
+test:
+- echo "Test suite not available!"
