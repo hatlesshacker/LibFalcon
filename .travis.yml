@@ -1,5 +1,8 @@
+compiler:
+  - clang
+  - gcc
 dist: xenial
-language: python
+language: c
 build:
 - make all
 test:
