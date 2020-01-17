@@ -1,9 +1,0 @@
-compiler:
-  - clang
-  - gcc
-dist: xenial
-language: c
-build:
-- make all
-test:
-- echo "Test suite not available!"
