@@ -6,3 +6,4 @@ OBJS += stdlib/bsearch.o
 OBJS += stdlib/lldiv.o
 OBJS += stdlib/ldiv.o
 OBJS += stdlib/div.o
+OBJS += stdlib/rand.o
