@@ -32,5 +32,5 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 double
 fabs(const double x) {
-  return (x < 0) ? -x: x;
+    return (x < 0) ? -x: x;
 }

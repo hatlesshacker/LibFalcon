@@ -34,5 +34,5 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 double
 ldexp(const double x, const long long y) {
-  return x * pow(2, y);
+    return x * pow(2, y);
 }
