@@ -30,20 +30,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+#include <math.h>     //For pow()
 
 double
-pow(const double x, const double y) {
-  double z = 1;
-  if (y > 0) {
-    for (unsigned long long i = 0; i < y; i++) {
-      z *= x;
-    }
-  }
-  if (y < 0 && x != 0) {
-    for (long long i = 0; i > y; i--) {
-      z /= x;
-    }
-  }
-  return z;
-
+ldexp(const double x, const long long y) {
+  return x * pow(2, y);
 }

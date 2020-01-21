@@ -1,6 +1,6 @@
 /* This File is Part of LibFalcon.
 
- * Copyright (c) 2018, Syed Nasim
+ * Copyright (c) 2020, Syed Nasim
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -17,7 +17,7 @@
      contributors may be used to endorse or promote products derived from
      this software without specific prior written permission.
 
-HIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
 DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
@@ -30,25 +30,40 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#ifndef _MATHS_H
-#define _MATHS_H
+#include <math.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-#include <stdint.h>
-#include <stddef.h>
+double sin(double x)
+{
+	double y[2];
+	uint32_t ix;
+	unsigned n;
 
-int32_t add(const int32_t, const int32_t);
-int32_t div(const int32_t, const int32_t);
-int32_t mod(const int32_t, const int32_t);
-int32_t mul(const int32_t, const int32_t);
-int32_t sub(const int32_t, const int32_t);
-int32_t pow(const int32_t, const int32_t);
+	/* High word of x. */
+	GET_HIGH_WORD(ix, x);
+	ix &= 0x7fffffff;
 
-#ifdef __cplusplus
+	/* |x| ~< pi/4 */
+	if (ix <= 0x3fe921fb) {
+		if (ix < 0x3e500000) {  /* |x| < 2**-26 */
+			/* raise inexact if x != 0 and underflow if subnormal*/
+			FORCE_EVAL(ix < 0x00100000 ? x/0x1p120f : x+0x1p120f);
+			return x;
+		}
+		return __sin(x, 0.0, 0);
+	}
+
+	/* sin(Inf or NaN) is NaN */
+	if (ix >= 0x7ff00000)
+		return x - x;
+
+	/* argument reduction needed */
+	n = __rem_pio2(x, y);
+	switch (n&3) {
+	case 0: return  __sin(y[0], y[1], 1);
+	case 1: return  __cos(y[0], y[1]);
+	case 2: return -__sin(y[0], y[1], 1);
+	default:
+		return -__cos(y[0], y[1]);
+	}
 }
-#endif
-
-#endif

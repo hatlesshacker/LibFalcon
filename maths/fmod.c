@@ -30,20 +30,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-
 double
-pow(const double x, const double y) {
-  double z = 1;
-  if (y > 0) {
-    for (unsigned long long i = 0; i < y; i++) {
-      z *= x;
-    }
+fmod(double x, const double y) {
+  if (x <= y || x <= 0 || y <= 0) {
+    return 0;
   }
-  if (y < 0 && x != 0) {
-    for (long long i = 0; i > y; i--) {
-      z /= x;
-    }
+  while (x >= y) {
+    x -= y;
   }
-  return z;
-
+  return x;
 }

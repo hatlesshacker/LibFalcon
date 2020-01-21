@@ -34,7 +34,7 @@ AS = nasm
 ASF = -f elf
 CFLAGS = -O0 -nostdlib -nostdinc -I./include/ -std=gnu99 -Wall -Wextra \
          -Wno-address -Wno-sign-compare -Wno-parentheses -Wno-unused-but-set-variable\
-				 -Wno-pointer-sign
+				 -Wno-pointer-sign -Wno-implicit-function-declaration
 AR = ar
 OBJS=
 
