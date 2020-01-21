@@ -68,8 +68,9 @@ all: $(OBJS)
 	@echo "  NASM     $@"
 	$(AS) $(ASF) $< -o $@
 
-test:
-	@echo "Test suite not available!"
+test: all
+	make -C test/ test
+	make -C test/ clean
 
 clean:
 	rm -rf $(OBJS) OUT/
