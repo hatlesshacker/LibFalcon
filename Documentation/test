@@ -1,0 +1,3 @@
+test/ will house a simple bare-bones x86 kernel that will make use of LibFalcon.
+running it in QEMU will show whether all the functions are working correctlyt or not,
+and the time each takes to execute.
