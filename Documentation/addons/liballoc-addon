@@ -1,1 +1,6 @@
 # Notes regarding LibAlloc Addon:
+
+Durand Miller's Liballoc (https://github.com/durandmiller/liballoc) is provided with LibFalcon
+as an addon. Uncomment the `include` line in the main makefile to use it. No core files of 
+LibFalcon use Liballoc (as of now), so it is completely upon the user to use it however
+he/she likes. It is released under the GNU GPL v3.

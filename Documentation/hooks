@@ -15,3 +15,7 @@ Here is the list of functions you need to implement in order to use LibFalcon.
 void LF_impl_kputs   |   normal puts() alternative            |  string/printk.c
  (unsigned char *c)  |                                        |
 ----------------------------------------------------------------------------------
+ <LibAlloc Hooks>    | A total of 4 hooks of LibAlloc need to |  <LibAlloc Addon>
+                     | be implemented if you compile with     |
+                     | LibAlloc.  include/libfalcon/liballoc.h|
+----------------------------------------------------------------------------------
