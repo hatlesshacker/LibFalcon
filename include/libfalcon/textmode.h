@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /*
- * These screenwriting functions are implemented 
+ * These screenwriting functions are implemented
  * in LibFalcon Source directory/addons/textmode/ .
  * If you did not compile LibFalcon with the addon, feel
  * free to remove this header file.

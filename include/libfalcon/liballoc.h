@@ -29,26 +29,25 @@ extern "C" {
  * used to identify valid memory blocks that the
  * application is trying to free.
  */
-struct	boundary_tag
-{
-	unsigned int magic;			//< It's a kind of ...
-	unsigned int size; 			//< Requested size.
-	unsigned int real_size;		//< Actual size.
-	int index;					//< Location in the page table.
+struct	boundary_tag {
+    unsigned int magic;			//< It's a kind of ...
+    unsigned int size; 			//< Requested size.
+    unsigned int real_size;		//< Actual size.
+    int index;					//< Location in the page table.
 
-	struct boundary_tag *split_left;	//< Linked-list info for broken pages.	
-	struct boundary_tag *split_right;	//< The same.
-	
-	struct boundary_tag *next;	//< Linked list info.
-	struct boundary_tag *prev;	//< Linked list info.
+    struct boundary_tag *split_left;	//< Linked-list info for broken pages.
+    struct boundary_tag *split_right;	//< The same.
+
+    struct boundary_tag *next;	//< Linked list info.
+    struct boundary_tag *prev;	//< Linked list info.
 };
 
 
- 
+
 
 /** This function is supposed to lock the memory data structures. It
  * could be as simple as disabling interrupts or acquiring a spinlock.
- * It's up to you to decide. 
+ * It's up to you to decide.
  *
  * \return 0 if the lock was acquired successfully. Anything else is
  * failure.
@@ -82,7 +81,7 @@ extern void* liballoc_alloc(int);
  */
 extern int liballoc_free(void*,int);
 
-       
+
 
 void     *malloc(size_t);				//< The standard function.
 void     *realloc(void *, size_t);		//< The standard function.
