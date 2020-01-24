@@ -45,6 +45,7 @@ OBJS=
 # Want to use them.
 
 #include addons/textmode/makefile
+#include addons/liballoc/makefile
 
 # These files contain the general functions that you
 # would expect from a C Library. 
