@@ -1,0 +1,12 @@
+AC_INIT([LibFalcon], [0.1], [syednasim.work@gmail.com])
+AC_PROG_CC
+AC_PROG_RANLIB
+
+PACKAGE_NASMFLAGS="-f elf32"
+
+AC_SUBST([PACKAGE_CFLAGS])
+AC_SUBST([PACKAGE_NASMFLAGS])
+
+AM_INIT_AUTOMAKE([subdir-objects])
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
