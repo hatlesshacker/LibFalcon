@@ -1,6 +1,6 @@
 language: c
 dist: xenial
-script: make
+script: ./configure && make
 addons:
   apt:
     packages:
