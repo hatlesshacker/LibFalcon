@@ -86,7 +86,22 @@ libfalcon_a_SOURCES = ctype/isalnum.c\
 			kernel/cr.asm\
 			kernel/int32-b.asm
 
-AM_CFLAGS = -I$(top_srcdir)/include/ -ffreestanding -nostdlib -m32 -Wall -Wextra
+AM_CFLAGS = -I$(top_srcdir)/libfalcon/ -ffreestanding -nostdlib -m32 -Wall -Wextra
+
+nobase_include_HEADERS = 	libfalcon/bithack.h\
+				libfalcon/bits.h\
+				libfalcon/ctype.h\
+				libfalcon/endian.h\
+				libfalcon/float.h\
+				libfalcon/kernel.h\
+				libfalcon/libfalcon/liballoc.h\
+				libfalcon/libfalcon/textmode.h\
+				libfalcon/math.h\
+				libfalcon/stdarg.h\
+				libfalcon/stddef.h\
+				libfalcon/stdint.h\
+				libfalcon/stdlib.h\
+				libfalcon/string.h
 
 NASMFLAGS = @PACKAGE_NASMFLAGS@
 NASM = /usr/bin/nasm
