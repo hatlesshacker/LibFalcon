@@ -23,7 +23,11 @@ For Installation of Libfalcon You should have:
 2. NASM. (tested with NASM version 2.09.10)
 3. make
 
-Go to the LibFalcon Project root directory and run `make clean`, just to be sure there are no stale object files. After that run `make`. If everything goes well and LibFalcon Compiles correctly, The build system will print "Build Successfull.". You'd see a directory named 'OUT' in the project root directory, which will house the 'libfalcon.a' library file (to be linked with your kernel source code's object files) and the 'includes/' directory which will serve as the standard includes directory containing all the reuired C headers.
+Go to the LibFalcon Project root directory and run the usual `./configure` , `make`, and `make install`. LibFalcon should then be installed in your --prefix, usually /usr/local/ . verify using `whereis`:
+```
+$ whereis libfalcon
+libfalcon: /usr/lib/libfalcon.a /usr/include/libfalcon
+```
 
 ## Using LibFalcon
 
